@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('activities', function (Blueprint $table) {
+        Schema::create('answer_activities', function (Blueprint $table) {
             $table->id();
-            $table->foreign('course')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
-            $table->dateTimeTz('date_of_publication',precision: 0)->nullable();
-            $table->dateTimeTz('date_of_expiration',precision: 0)->nullable();
+            $table->foreign('user_id ')->references('id')->on('users')->onDelete('cascade');
+            $table->string('file')->nullable();
+            $table->dateTimeTz('date_upload')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('activities');
+        Schema::dropIfExists('answer_activities');
     }
 };
