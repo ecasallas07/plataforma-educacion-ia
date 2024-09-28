@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('answer_activities', function (Blueprint $table) {
             $table->id();
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
             $table->string('title')->nullable();
-            $table->foreign('user_id ')->references('id')->on('users')->onDelete('cascade');
             $table->string('file')->nullable();
             $table->dateTimeTz('date_upload')->nullable();
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->timestamps();
         });
     }
