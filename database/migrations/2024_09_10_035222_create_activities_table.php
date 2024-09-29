@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('course');
-            $table->foreign('course')->references('id')->on('courses')->onDelete('cascade');
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->dateTimeTz('date_of_publication',precision: 0)->nullable();
             $table->dateTimeTz('date_of_expiration',precision: 0)->nullable();
             $table->timestamps();
