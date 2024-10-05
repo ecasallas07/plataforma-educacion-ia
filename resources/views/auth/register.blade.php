@@ -27,6 +27,7 @@
                 <div>
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Your name') }}</label>
                     <input type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="name.lastname" required>
+
                 </div>
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Your email') }}</label>
@@ -57,6 +58,16 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <label for="user-role" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Confirm password') }}</label>
+                    <select id="user-role" name="user_role" class="block w-full px-3 py-2 mt-1 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500">
+                        <option value="" selected>{{ __('Seleccione...') }}</option>
+                        <option value="student">{{ __('Estudiante') }}</option>
+                        <option value="professor">{{ __('Profesor') }}</option>
+                        <option value="admin">{{ __('Admin') }}</option>
+                    </select>
+                </div>
+
                 <div class="flex items-start">
                     <div class="flex items-center h-5">
                         <input id="remember" aria-describedby="remember" name="remember" type="checkbox" class="w-4 h-4 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:focus:ring-primary-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" required>
